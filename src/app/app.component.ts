@@ -22,4 +22,8 @@ export class AppComponent implements OnInit {
       this.users = data;
     })
   }
+
+  novoUsuario(): void {
+    
+  }
 }

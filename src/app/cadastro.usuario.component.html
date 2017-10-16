@@ -1,27 +1,41 @@
-<div>
-    <form>
-    
-        <div class="form-group">
-            <label>Nome*</label>
-            <input type="text" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label>Nome de usuário*</label>
-            <input type="text" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label>E-mail*</label>
-            <input type="text" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label>Website</label>
-            <input type="text" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label>Nome</label>
-            <input type="text" class="form-control" />
-        </div>
-    
-    </form>
-    <i>* Campos obrigatórios</i> 
+<form [formGroup]="formUsuario" novalidate>
+
+    <div class="form-group" [ngClass]="{
+        'has-error': formUsuario.controls.name.invalid && formUsuario.controls.name.dirty
+    }">
+        <label>Nome*</label>
+        <input type="text" class="form-control" formControlName="name"/>
+    </div>
+    <div class="form-group"[ngClass]="{
+        'has-error': formUsuario.controls.username.invalid && formUsuario.controls.username.dirty
+    }">
+        <label>Nome de usuário*</label>
+        <input type="text" class="form-control" formControlName="username"/>
+    </div>
+    <div class="form-group" [ngClass]="{
+        'has-error': formUsuario.controls.email.invalid && formUsuario.controls.email.dirty
+    }">
+        <label>E-mail*</label>
+        <input type="text" class="form-control" formControlName="email"/>
+    </div>
+    <div class="form-group" [ngClass]="{
+        'has-error': formUsuario.controls.website.invalid && formUsuario.controls.website.dirty
+    }">
+        <label>Website:</label>
+        <input type="text" class="form-control" formControlName="website"/>
+    </div>
+    <div class="form-group" [ngClass]="{
+        'has-error': formUsuario.controls.phone.invalid && formUsuario.controls.phone.dirty
+    }">
+        <label>Telefone:</label>
+        <input type="text" class="form-control" formControlName="phone"/>
+    </div>
+
+</form>
+<p>{{formUsuario.value|json}}</p>
+<p>{{formUsuario.status|json}}</p>
+<i>* Campos obrigatórios</i> 
+<div class="col-md-12">
+    <button class="btn btn-success pull-right">Salvar</button>
+    <a class="cancel-link pull-right">Cancelar</a>
 </div>

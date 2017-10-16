@@ -32,10 +32,8 @@
     </div>
 
 </form>
-<p>{{formUsuario.value|json}}</p>
-<p>{{formUsuario.status|json}}</p>
 <i>* Campos obrigatórios</i> 
 <div class="col-md-12">
-    <button class="btn btn-success pull-right">Salvar</button>
-    <a class="cancel-link pull-right">Cancelar</a>
+    <button class="btn btn-success pull-right" (click)="cadastrar()">Salvar</button>
+    <a class="cancel-link pull-right" (click)="cancelar()">Cancelar</a>
 </div>

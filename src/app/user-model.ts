@@ -3,6 +3,4 @@ export class User {
   name: string;
   username: string;
   email: string;
-  website: string;
-  phone: string;
 }

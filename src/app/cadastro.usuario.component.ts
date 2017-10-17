@@ -16,8 +16,6 @@ export class CadastroUsuarioComponent {
         name: new FormControl('', Validators.required),
         username: new FormControl('', Validators.required),
         email: new FormControl('', [Validators.required, Validators.email]),
-        phone: new FormControl(),
-        website: new FormControl()
     });
     cancelar() {
         this.router.navigateByUrl('/usuarios');
@@ -28,9 +26,9 @@ export class CadastroUsuarioComponent {
             control.markAsDirty({ onlySelf: true });
         });
         if (this.formUsuario.valid) {
-
+            this.router.navigateByUrl('/usuarios');
         } else {
-
+            alert('Verifique os campos em vermelho.');
         }
     }
 }
